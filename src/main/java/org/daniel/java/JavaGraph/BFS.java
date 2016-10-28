@@ -26,10 +26,8 @@ public class BFS {
 	/**
 	 * Breadth first search of a graph. Runs in O(v + e), where v and e are 
 	 * the amount of vertexes and edges, respectively 
-	 * @param graph - graph object, contains list of nodes in graph
 	 * @param node - acting root node of graph
 	 * @param value - value to find, if at all
-	 * @return String - of values of the nodes visited in order
 	 */
 	public void bfs(Node n, int value) {
 		Queue<Node> q = new LinkedList<Node>();
