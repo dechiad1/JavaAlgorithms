@@ -33,7 +33,6 @@ public class BFS {
 		Queue<Node> q = new LinkedList<Node>();
 		q.add(n);
 		discovered[n.getIndex()] = true;
-		ancestor[n.getIndex()] = null;
 		
 		while(!q.isEmpty()) {
 			Node node = q.remove();
@@ -75,6 +74,7 @@ public class BFS {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for(Node node : ancestor) {
+			//node of root is null, as it has no parent
 			if(node != null) {sb.append(node.getValue());}
 		}
 		return sb.toString();
