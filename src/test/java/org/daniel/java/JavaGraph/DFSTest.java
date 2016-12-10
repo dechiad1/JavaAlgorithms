@@ -28,6 +28,22 @@ public class DFSTest extends GraphSetup {
 	 *              8 - 10
 	 */
 	
+	/**
+	 * dfs of graph starting at node 1
+	 * 
+	 * initial dfs call will create the ancestor array 
+	 * starting at node 1
+	 * 
+	 * toString will convert the ancestor array to a 
+	 * string using the values of each node in the array
+	 * 
+	 * The index of the ancestors array corresponds to order
+	 * in which a node was added to the graph. This value gets
+	 * set during 'graph.addVertex(node)'
+	 * 
+	 * The value at each index represents the parent of the node
+	 * for the most recent run of dfs
+	 */
 	@Test
 	public void dfs_test_node1() {
 		String expected = "163923748";
