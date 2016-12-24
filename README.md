@@ -1,2 +1,5 @@
-# JavaGraph
-Implementation of graph algorithms in Java
+# Java Algorithms
+Implementation of programming problems in java
+	-graph 
+	-tree
+	-sort
