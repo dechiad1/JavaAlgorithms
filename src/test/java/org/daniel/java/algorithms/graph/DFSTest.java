@@ -1,6 +1,9 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
 
 import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -58,6 +61,27 @@ public class DFSTest extends GraphSetup {
 		dfs.dfs(four, 4);
 		String actual = dfs.toString();
 		assertEquals(expected, actual);
+	}
+	
+	//helper method to setup graph for test
+	private void setNodeValues() {
+		one.setValue("A");
+		two.setValue("B");
+		three.setValue("A");
+		four.setValue("C");
+		five.setValue("A");
+		six.setValue("A");
+		seven.setValue("C");
+		eight.setValue("A");
+		nine.setValue("B");
+		ten.setValue("B");
+	}
+	
+	@Test
+	public void def_find_path_test() {
+		setNodeValues();
+		List<Node> solution = dfs.findPath(four, new ArrayList<Node>());
+		assertEquals(solution.size(), 6);
 	}
 	
 }

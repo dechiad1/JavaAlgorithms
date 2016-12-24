@@ -1,7 +1,8 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
 
 import static org.junit.Assert.assertEquals;
 
+import org.daniel.java.algorithms.graph.BFS;
 import org.junit.Before;
 import org.junit.Test;
 

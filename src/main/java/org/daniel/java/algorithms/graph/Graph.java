@@ -1,4 +1,4 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
 
 import java.util.HashSet;
 import java.util.List;

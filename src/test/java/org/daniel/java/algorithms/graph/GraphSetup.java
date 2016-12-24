@@ -1,5 +1,7 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
 
+import org.daniel.java.algorithms.graph.Graph;
+import org.daniel.java.algorithms.graph.Node;
 import org.junit.Before;
 
 public class GraphSetup {
@@ -78,5 +80,4 @@ public class GraphSetup {
 		graph.addVertex(nine);
 		graph.addVertex(ten);
 	}
-	
 }

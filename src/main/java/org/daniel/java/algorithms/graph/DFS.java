@@ -1,4 +1,7 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DFS {
 	private Graph graph;
@@ -40,6 +43,38 @@ public class DFS {
 		}
 		
 		processed[n.getIndex()] = true;
+	}
+	
+	/* Find the longest sequence of nodes with value's of either A or B. Nodes can have 
+	 * a value of A, B or C. 
+	 */
+	public List<Node> findPath(Node n, List<Node> soln) {
+		discovered[n.getIndex()] = true;
+		//test if node is in sequence early
+		//DEBUG: System.out.println("at node " + (n.getIndex()+1));
+		if(n.getValue() == "A" || n.getValue() == "B") {
+			soln.add(n);
+		} else {
+			soln = new ArrayList<Node>();
+		}
+		//DEBUG: System.out.println("solution at " + (n.getIndex()+1) + " is " + soln.size() + " long");
+		
+		List<Node> tempList = new ArrayList<Node>(0);
+		for(Node node : n.getEdges()) {
+			if(!discovered[node.getIndex()]) {
+				//DEBUG: System.out.println("going into " + (node.getIndex()+1) + " from " + (n.getIndex()+1));
+				List<Node> childSoln = findPath(node, soln);
+				if(childSoln.size() > tempList.size()) {
+					tempList = childSoln;
+				}
+				//DEBUG: System.out.println("soln for " + (n.getIndex()+1) + " is " + soln.size() + " after returning from " + (node.getIndex()+1));
+			}
+		}
+		if(tempList.size() > soln.size()) {
+			soln = tempList;
+		}
+		//DEBUG: System.out.println("node " + (n.getIndex()+1) + " soln length is " + soln.size());
+		return soln;
 	}
 
 	private void processVertexEarly(Node node, int value) {

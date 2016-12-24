@@ -1,4 +1,4 @@
-package org.daniel.java.JavaGraph;
+package org.daniel.java.algorithms.graph;
 
 import java.util.ArrayList;
 import java.util.List;
