@@ -1,6 +1,8 @@
 package org.daniel.java.algorithms.sort;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class MergeSort {
 
@@ -40,6 +42,52 @@ public class MergeSort {
 		}
 		
 		return merged;
+	}
+	
+	public char[] mergeSortTwo(char[] unsorted, int low, int high) {
+		if(low < high) {
+			int middle = Math.floorDiv((high+low), 2);
+			mergeSortTwo(unsorted, low, middle);
+			mergeSortTwo(unsorted, middle+1, high);
+			mergeTwo(unsorted, low, middle, high);
+		}
+		
+		return unsorted;
+	}
+	
+	public char[] mergeTwo(char[] s, int low, int middle, int high) {
+		Queue<Character> buffer1 = new LinkedList<Character>();
+		Queue<Character> buffer2 = new LinkedList<Character>();
+		int i = low;
+		for(i = low; i<= middle; i++) {
+			buffer1.add(s[i]);
+		}
+		
+		for(i = middle+1; i <= high; i++) {
+			buffer2.add(s[i]);
+		}
+		
+		i = low;
+		while(!(buffer1.isEmpty() || buffer2.isEmpty())) {
+			if(buffer1.peek() < buffer2.peek()) {
+				s[i] = buffer1.poll();
+			} else {
+				s[i] = buffer2.poll();
+			}
+			i++;
+		}
+		
+		while(!buffer1.isEmpty()) {
+			s[i] = buffer1.poll();
+			i++;
+		}
+		
+		while(!buffer2.isEmpty()) {
+			s[i] = buffer2.poll();
+			i++;
+		}
+		
+		return s;
 	}
 
 }

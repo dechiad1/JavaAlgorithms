@@ -38,4 +38,10 @@ public class MergeSortTest {
 		char[] sorted = mergeSort.mergeSort("bzadxzdc".toCharArray());
 		assertTrue(Arrays.equals("abcddxzz".toCharArray(), sorted));
 	}
+	
+	@Test 
+	public void mergeSortTwo_testlongermerge() {
+		char[] sorted = mergeSort.mergeSortTwo("bzadxzdc".toCharArray(), 0, 7);
+		assertTrue(Arrays.equals("abcddxzz".toCharArray(), sorted));
+	}
 }

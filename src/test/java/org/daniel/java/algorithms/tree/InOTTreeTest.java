@@ -31,7 +31,7 @@ public class InOTTreeTest extends TreeSetup{
 	
 	@Test
 	public void iterativeIOTWithLessSpace_test() {
-		String result = iot.iteravtiveIOTWithLessSpace(a);
+		String result = iot.iterativeIOTWithLessSpace(a);
 		assertEquals(expected, result);
 	}
 }

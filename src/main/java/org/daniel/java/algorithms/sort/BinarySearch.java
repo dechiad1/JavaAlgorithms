@@ -6,16 +6,19 @@ public class BinarySearch {
 	 * Input array must be sorted
 	 */
 	public int binarySearch(char[] toSearch, char toFind) {
-		int index = toSearch.length/2;
+		int low = 0;
+		int high = toSearch.length-1;
 		
-		while (!(toSearch[index] == toFind)) {
-			if(toSearch[index] < toFind) {
-				index += index/2;
+		while (low <= high) {
+			int middle = (high + low)/2;
+			if(toSearch[middle] < toFind) {
+				low = middle+1;
 			}
-			else {
-				index /= 2;
+			else if(toSearch[middle] > toFind){
+				high = middle-1;
 			}
+			else return middle;
 		}
-		return index;
+		return -1;
 	}
 }

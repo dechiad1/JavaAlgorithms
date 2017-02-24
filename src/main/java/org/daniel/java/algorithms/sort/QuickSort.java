@@ -39,6 +39,32 @@ public class QuickSort {
 		return i;
 	}
 	
+	public char[] quickSortTwo(char[] unsorted, int start, int end) {
+		if((end-start) > 0) {
+				int p = partitionTwo(unsorted, start, end);
+				quickSortTwo(unsorted, start, p-1);
+				quickSortTwo(unsorted, p+1, end);
+		}
+		return unsorted;
+	}
+	
+	public int partitionTwo(char[] s, int start, int end) {
+		//set the partition to start initially
+		int partition = start;
+		for(int i = start; i < end; i++) {
+			if(s[i] < s[end]) {
+				/* if the current element is less than end element, 
+				 * swap with partition (a previous element that is 
+				 * not less than the end element
+				 */
+				swap(s, i, partition);
+				partition++;
+			}
+		}
+		swap(s, end, partition); //since partition is greater than end, swap the two
+		return partition;
+	}
+	
 	public void swap(char[] unsorted, int x, int y) {
 		char temp = unsorted[x];
 		unsorted[x] = unsorted[y];

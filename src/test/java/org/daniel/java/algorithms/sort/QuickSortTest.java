@@ -57,4 +57,10 @@ public class QuickSortTest {
 		char[] sorted = quickSort.quickSort(testInput, 0, testInput.length-1);
 		assertTrue(Arrays.equals("abcd".toCharArray(), sorted));
 	}
+	
+	@Test
+	public void quicksorttwo_test() {
+		char[] sorted = quickSort.quickSortTwo("quicksort".toCharArray(), 0, 8);
+		assertTrue(Arrays.equals("cikoqrstu".toCharArray(), sorted));
+	}
 }
